@@ -1,0 +1,44 @@
+{% extends '_layout.html' %}
+
+{% block body %}
+
+<h1>Currency converter</h1>
+    <p>Use the below form to convert currencies.</p>
+    <p>The output currency ("To") is not a required field. If it's left empty, the amount will be converted to all known currencies.</p>
+
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <input type="text" class="form-control mb-2" name="amount" placeholder="Amount">
+            </div>
+
+            <div class="col-auto">
+                <input type="text" class="form-control mb-2" name="in_currency" placeholder="From">
+            </div>
+
+            <div class="col-auto">
+                <input type="text" class="form-control mb-2" name="out_currency" placeholder="To">
+            </div>
+
+            <div class="col-auto">
+                <input type="submit" class="btn btn-primary mb-2" value="Convert" />
+            </div>
+        </div>
+    </form>
+
+    {% if converted %}
+        <p>{{ converted.input.amount }} {{ converted.input.currency }}</p>
+
+        {% for curr, value in converted.output.items() %}
+        <p> &emsp; = {{ value }} {{ curr }}</p>
+        {% endfor %}
+
+    {% endif %}
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+{% endblock %}

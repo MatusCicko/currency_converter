@@ -1,0 +1,11 @@
+{
+    "override_currencies": false,
+    "currencies_expiration": "1440",
+    "converter": "ConverterOER",
+    "verbosity": false,
+    "log_filename": "history.json",
+    "oer_config": {
+        "app_id": "9d68978967b0484e9f51ae0f3dc52364",
+        "rates_expiration": "60"
+    }
+}

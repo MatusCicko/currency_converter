@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Currency converter</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    </head>
+    <body>
+
+    <nav class="navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid" style="width: 90%">
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('convert_form') }}">Converter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('list_currencies') }}">Currencies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="width: 90%">
+
+        {% block body %}{% endblock %}
+
+    </div>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{% extends '_layout.html' %}
+
+{% block body %}
+
+<h1>Supported currencies</h1>
+    <p>Below is a list of supported currency codes and symbols:</p>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Currency name</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for curr in currencies %}
+                <tr>
+                <td>{{ curr.code }}</td>
+                <td>{{ curr.symbol }}</td>
+                <td width="70%">{{ curr.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
